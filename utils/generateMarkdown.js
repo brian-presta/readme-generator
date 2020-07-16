@@ -7,7 +7,7 @@ function generateMarkdown(data) {
   ${data.description}
 
 
-  ## Table of Contents (Optional)
+  ## Table of Contents
 
   * [Installation](#installation)
   * [Usage](#usage)
@@ -27,7 +27,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  This project is licensed under the ${data.license} license, learn more at [Choose a License](https://choosealicense.com/licenses/${data.license}/)
+  This project is licensed under the ${data.license} license.
 
   ## Tests
 

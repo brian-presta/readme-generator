@@ -1,4 +1,5 @@
 const inquirer = require("inquirer")
+const fs = require("fs")
 const generateMarkdown = require("./utils/generateMarkdown.js")
 // array of questions for user
 const questions = [
@@ -55,37 +56,88 @@ const questions = [
         type: "input",
         name: "description",
         message: "Please enter a description for your project.",
+        validate: input => {
+          if (input) {
+            return true;
+          } 
+          else {
+            console.log("Please enter a description!");
+            return false;
+          }
+      }
     },
     {
         type: "input",
         name: "installation",
         message: "Please enter installation instructions for your project.",
+        validate: input => {
+          if (input) {
+            return true;
+          } 
+          else {
+            console.log("Please enter installation instructions!");
+            return false;
+          }
+      }
     },
     {
         type: "input",
         name: "usage",
         message: "Please enter usage information for your project.",
+        validate: input => {
+          if (input) {
+            return true;
+          } 
+          else {
+            console.log("Please enter usage information!");
+            return false;
+          }
+      }
     },
     {
         type: "input",
         name: "contribution",
         message: "Please enter contribution guidelines for your project.",
+        validate: input => {
+          if (input) {
+            return true;
+          } 
+          else {
+            console.log("Please enter contribution guidelines!");
+            return false;
+          }
+      }
     },
     {
         type: "input",
         name: "tests",
         message: "Please enter test instructions for your project.",
+        validate: input => {
+          if (input) {
+            return true;
+          } 
+          else {
+            console.log("Please enter test instructions!");
+            return false;
+          }
+      }
     },
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
+  fs.writeFile(`./dist/${fileName}`,data, err => {
+    if (err) {
+      console.log(err)
+      return
+    }
+  } )
 }
 
 // function to initialize program
 function init() {
     // inquirer.prompt(questions).then(result => console.log(result))
-    console.log(generateMarkdown(dummy))
+    writeToFile('README.md',generateMarkdown(dummy))
 }
 var dummy = {
   userName: 'brian-presta',
