@@ -1,5 +1,5 @@
 # ${title}
-![license badge](https://img.shields.io/badge/license-${license}-green)
+![license badge](https://img.shields.io/badge/license-${data.license}-green)
 ## Description 
 
 ${description}
@@ -17,16 +17,20 @@ ${description}
 
 ## Installation
 
-${installation}
+${data.installation}
 
 ## Usage 
 
-${usage}
+${data.usage}
 
 ## License
 
-This project is licensed under the ${license} license, learn more at [Choose a License](https://choosealicense.com/licenses/${license}/)
+This project is licensed under the ${data.license} license, learn more at [Choose a License](https://choosealicense.com/licenses/${data.license}/)
 
 ## Tests
 
-${tests}
+${data.tests}
+
+## Questions
+
+If you have any questions about this project, please contact me at <${data.email}> or [on GitHub](https://github.com/${data.userName})

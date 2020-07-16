@@ -1,4 +1,5 @@
 const inquirer = require("inquirer")
+const generateMarkdown = require("./utils/generateMarkdown.js")
 // array of questions for user
 const questions = [
     {
@@ -48,7 +49,7 @@ const questions = [
         name: "license",
         message: "What license was this project published under?",
         choices: ["GNU AGPL v3","GNU GPL v3","GNU LGPL v3",
-        "Mozilla Public License 2.0","Apache License 2.0","MIT","Boost Software License 1.0","No License"]
+        "Mozilla Public License 2.0","Apache License 2.0","MIT","Boost Software License 1.0","Unlicense"]
       },
     {
         type: "input",
@@ -83,20 +84,20 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(result => console.log(result))
+    // inquirer.prompt(questions).then(result => console.log(result))
+    console.log(generateMarkdown(dummy))
 }
-
+var dummy = {
+  userName: 'brian-presta',
+  email: 'brian.presta@gmail.com',
+  title: 'portfolio-generator',
+  license: 'MIT',
+  description: 'This program makes readmes',
+  installation: 'Clone it, do npm install',
+  usage: 'Go nuts',
+  contribution: 'No contributions allowed',
+  tests: 'Go nuts'
+}
 // function call to initialize program
 init();
 
-var dummy = {
-    userName: 'brian-presta',
-    email: 'brian.presta@gmail.com',
-    title: 'portfolio-generator',
-    license: 'MIT',
-    description: 'This program makes readmes',
-    installation: 'Clone it, do npm install',
-    usage: 'Go nuts',
-    contribution: 'No contributions allowed',
-    tests: 'Go nuts'
-  }
