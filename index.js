@@ -136,20 +136,9 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    // inquirer.prompt(questions).then(result => console.log(result))
-    writeToFile('README.md',generateMarkdown(dummy))
+    inquirer.prompt(questions).then(data => writeToFile("README.md",generateMarkdown(data)))
 }
-var dummy = {
-  userName: 'brian-presta',
-  email: 'brian.presta@gmail.com',
-  title: 'portfolio-generator',
-  license: 'MIT',
-  description: 'This program makes readmes',
-  installation: 'Clone it, do npm install',
-  usage: 'Go nuts',
-  contribution: 'No contributions allowed',
-  tests: 'Go nuts'
-}
+
 // function call to initialize program
 init();
 
