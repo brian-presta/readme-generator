@@ -72,7 +72,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "test",
+        name: "tests",
         message: "Please enter test instructions for your project.",
     },
 ];
@@ -98,5 +98,5 @@ var dummy = {
     installation: 'Clone it, do npm install',
     usage: 'Go nuts',
     contribution: 'No contributions allowed',
-    test: 'Go nuts'
+    tests: 'Go nuts'
   }
