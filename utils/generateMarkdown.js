@@ -2,9 +2,9 @@
 function generateMarkdown(data) {
   // we use a regular expression to replace the whitespace in the license string with %20, 
   // this prevents the shields.io URL from breaking
-  data.license = data.license.replace(/\s/g,'%20')
+  data.licenseURL = data.license.replace(/\s/g,'%20')
   return `# ${data.title}
-  ![license badge](https://img.shields.io/badge/license-${data.license}-green)
+  ![license badge](https://img.shields.io/badge/license-${data.licenseURL}-green)
   ## Description 
 
   ${data.description}
