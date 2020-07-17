@@ -131,6 +131,7 @@ function writeToFile(fileName, data) {
       console.log(err)
       return
     }
+    console.log("README successfully generated, find it in the /dist folder!")
   } )
 }
 
